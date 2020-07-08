@@ -12,7 +12,7 @@ app.get("/staff", (req, res) => {
 app.post("/staff", (req, res) => {
   console.log(" staff success");
   Staff.push(req.body);
-  res.json({ message: "hi" });
+  res.json({ Staff });
 });
 app.get("/student", (req, res) => {
   console.log("student success");
