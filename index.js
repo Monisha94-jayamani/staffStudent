@@ -26,26 +26,24 @@ app.post("/student", (req, res) => {
 app.put("/staff/:id", (req, res) => {
   let Id = req.params.id;
   console.log(Id);
-  var count = 0;
+
   let stafffind = Staff.find((v, index) => v.id == Id);
   console.log(stafffind);
-  let s = Student.reduce((acc, cur) => {
+  let count = Student.reduce((acc, cur) => {
     if (cur.staffid == Id) {
       acc = acc + 1;
     }
     return acc;
   }, 0);
-  //  console.log(s);
-  stafffind.studentCount = s;
+  stafffind.studentCount = count;
   console.log("staff count is added");
-  //console.log(staff)
   res.json({ message: "staff count is updated" });
 });
 
 app.delete("/student/:id", (req, res) => {
   let studentId = req.params.id;
-  let s = Student.filter((s, index) => s.id == studentId)[0];
-  const index = Student.indexOf(s);
+  let studentfind = Student.filter((s, index) => s.id == studentId)[0];
+  const index = Student.indexOf(studentfind);
 
   Student.splice(index, 1);
   console.log("deleted");
