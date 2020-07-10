@@ -1,0 +1,20 @@
+Heroku link
+https://crudnodejs-demo.herokuapp.com/staff
+Staff
+{name:staff1, 
+id:1,
+StudentCount:0,
+email :tbc@gmail.com
+} 
+} 
+Student
+{name:moni1, 
+id:1,
+staffid:1,
+email :tbc@gmail.com
+} 
+{name:moni2, 
+id:2,
+staffid:1,
+email :tbc@gmail.com
+} 
